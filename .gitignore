@@ -37,13 +37,6 @@ ENV/
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 
-# Model files and logs
-*.zip
-dqn_logs*/
-temp_models/
-*.pth
-*.ckpt
-
 # OS
 .DS_Store
 Thumbs.db
