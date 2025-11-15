@@ -5,4 +5,7 @@ stable-baselines3[extra]
 torch
 opencv-python
 autorom[accept-rom-license]
+moviepy
+gymnasium[other]
 
+pyvirtualdisplay
