@@ -55,16 +55,18 @@ target/
 .DS_Store
 Thumbs.db
 
-# Logs, models, videos
-logs/
-logs/videos/
-*.mp4
-*.avi
-*.mkv
-*.zip
-*.npz
-*.pth
-*.pt
+# Logs, models, videos (previously ignored)
+# The lines below were commented out so the `logs/` folder can be tracked in the repo.
+# If you prefer to keep some files untracked (videos, large models), re-enable specific patterns.
+#logs/
+#logs/videos/
+#*.mp4
+#*.avi
+#*.mkv
+#*.zip
+#*.npz
+#*.pth
+#*.pt
 
 # Misc
 *.swp
