@@ -45,7 +45,7 @@ The table below was generated from `logs/results.csv` (most recent run wins per 
 
 ## Kanisa Thiak Experiment Results Table
 
-The table below uses the hyperparameter combinations defined in `train.py` (the `default_hyperparams()` list). Avg Reward is populated from `logs/results.csv` when available (most recent entry per experiment id). Entries not yet run are marked "Not evaluated".
+The table below uses the hyperparameter combinations defined in `train.py` (the `default_hyperparams()` list). Avg Reward is populated from `logs/results.csv` when available (most recent entry per experiment id).
 
 | MEMBER NAME      | Hyperparameter Set                                                                        | Noted Behavior                                                                           | **Avg Reward** | **Performance** |
 | ---------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | -------------- | --------------- |
