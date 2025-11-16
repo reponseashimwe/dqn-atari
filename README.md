@@ -36,22 +36,6 @@ Next steps I can run for you:
 - Run the setup script now to create `.venv` and install requirements, then run `train.py` and report results (I'll do that if you want).
 - If the install requires GPU-specific wheels for `torch`, I can guide you how to pick the correct wheel.
 
-## Experiments (Kanisa Thiak)
-
-Below is the table of 10 hyperparameter combinations I will use for experiments. Each row is one experiment (experiment_id). Fill in the "Noted Behavior" column after running the experiments (mean reward, episode length trends, and qualitative notes).
-
-| MEMBER NAME    | Experiment ID | Policy     | lr      | gamma | batch | epsilon_start | epsilon_end | epsilon_fraction | Noted Behavior |
-|----------------|---------------:|------------|--------:|------:|------:|--------------:|------------:|-----------------:|----------------|
-| Kanisa Thiak   | 1              | CnnPolicy  | 0.001   | 0.99  | 32    | 1.0           | 0.10        | 0.1              | TBD            |
-| Kanisa Thiak   | 2              | CnnPolicy  | 0.0005  | 0.99  | 32    | 1.0           | 0.05        | 0.1              | TBD            |
-| Kanisa Thiak   | 3              | CnnPolicy  | 0.0001  | 0.99  | 32    | 1.0           | 0.05        | 0.1              | TBD            |
-| Kanisa Thiak   | 4              | CnnPolicy  | 0.00005 | 0.99  | 64    | 1.0           | 0.05        | 0.2              | TBD            |
-| Kanisa Thiak   | 5              | CnnPolicy  | 0.0001  | 0.95  | 32    | 1.0           | 0.05        | 0.1              | TBD            |
-| Kanisa Thiak   | 6              | CnnPolicy  | 0.0001  | 0.99  | 64    | 1.0           | 0.01        | 0.1              | TBD            |
-| Kanisa Thiak   | 7              | CnnPolicy  | 0.0005  | 0.95  | 128   | 1.0           | 0.05        | 0.2              | TBD            |
-| Kanisa Thiak   | 8              | CnnPolicy  | 0.001   | 0.90  | 32    | 1.0           | 0.10        | 0.2              | TBD            |
-| Kanisa Thiak   | 9              | CnnPolicy  | 0.0002  | 0.99  | 128   | 1.0           | 0.05        | 0.1              | TBD            |
-| Kanisa Thiak   | 10             | CnnPolicy  | 0.00001 | 0.99  | 64    | 1.0           | 0.01        | 0.1              | TBD            |
 
 Video of a short play session (auto-recorded): `logs/videos/play-episode-0.mp4`
 
@@ -65,10 +49,10 @@ The table below uses the hyperparameter combinations defined in `train.py` (the 
 
 | MEMBER NAME | Hyperparameter Set | Noted Behavior | Avg Reward | Performance |
 |-------------|--------------------|----------------|-----------:|-------------|
-| Kanisa Thiak | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Baseline configuration. Stable but needs more timesteps; occasional scores observed. | 0.60 | Poor |
-| Kanisa Thiak | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Lower learning rate: slower, more stable learning expected; may require longer training to improve. | Not evaluated | Not evaluated |
-| Kanisa Thiak | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate and larger final eps: faster updates but risk of instability; more exploration initially. | Not evaluated | Not evaluated |
-| Kanisa Thiak | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Higher gamma (0.997): favors long-term reward/credit assignment; may improve long-horizon play with enough training. | Not evaluated | Not evaluated |
+| Kanisa Thiak | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Baseline configuration. Stable but needs more timesteps; occasional scores observed. | 0.00 | Failed |
+| Kanisa Thiak | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Lower learning rate: slower, more stable learning expected; may require longer training to improve. | 0.50 | Poor |
+| Kanisa Thiak | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate and larger final eps: faster updates but risk of instability; more exploration initially. | 0.60 | Poor |
+| Kanisa Thiak | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Higher gamma (0.997): favors long-term reward/credit assignment; may improve long-horizon play with enough training. | 0.70 | Poor |
 | Kanisa Thiak | Set 5 - lr=0.0001, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Larger batch size: more stable gradient estimates, often improves training stability. | Not evaluated | Not evaluated |
 | Kanisa Thiak | Set 6 - lr=5e-05, gamma=0.997, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Low lr + high gamma + big batch: very stable but slow to improve; good for long runs. | Not evaluated | Not evaluated |
 | Kanisa Thiak | Set 7 - lr=0.00025, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Aggressive lr + high gamma: fast but potentially unstable; may get high variance in returns. | Not evaluated | Not evaluated |
@@ -87,19 +71,4 @@ Tune the following hyperparameters and record the observed behavior in the table
 - Epsilon (epsilon_start, epsilon_end, epsilon_decay): Controls exploration in ε-greedy policies.
 
 NB: Each GROUP MEMBER MUST EXPERIMENT WITH 10 experiments (10 different hyperparameter combinations).
-
-Fill this table after running your experiments. Add more rows if you run more than 10.
-
-| MEMBER NAME | Hyperparameter Set | Noted Behavior |
-|-------------|--------------------|----------------|
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
-| Your Name   | lr=, gamma=, batch=, epsilon_start=, epsilon_end=, epsilon_decay= |  |
 
