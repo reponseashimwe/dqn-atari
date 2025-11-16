@@ -1,0 +1,22 @@
+{
+    "Set_1_Best_Policy": {
+        "avg_reward": 5.400000095367432,
+        "model_path": "/content/drive/MyDrive/DQN_Breakout_Final_Submission/Experiments/Set_1_Best_Policy/Set_1_Best_Policy.zip"
+    },
+    "Set_2_High_LR": {
+        "avg_reward": 0.0,
+        "model_path": "/content/drive/MyDrive/DQN_Breakout_Final_Submission/Experiments/Set_2_High_LR/Set_2_High_LR.zip"
+    },
+    "Set_3_Low_Gamma": {
+        "avg_reward": 1.399999976158142,
+        "model_path": "/content/drive/MyDrive/DQN_Breakout_Final_Submission/Experiments/Set_3_Low_Gamma/Set_3_Low_Gamma.zip"
+    },
+    "Set_4_Extended_Eps": {
+        "avg_reward": 3.0,
+        "model_path": "/content/drive/MyDrive/DQN_Breakout_Final_Submission/Experiments/Set_4_Extended_Eps/Set_4_Extended_Eps.zip"
+    },
+    "Set_5_Large_Batch": {
+        "avg_reward": 7.0,
+        "model_path": "/content/drive/MyDrive/DQN_Breakout_Final_Submission/Experiments/Set_5_Large_Batch/Set_5_Large_Batch.zip"
+    }
+}
