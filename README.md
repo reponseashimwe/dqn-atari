@@ -49,10 +49,10 @@ The table below uses the hyperparameter combinations defined in `train.py` (the 
 
 | MEMBER NAME | Hyperparameter Set | Noted Behavior | Avg Reward | Performance |
 |-------------|--------------------|----------------|-----------:|-------------|
-| Kanisa Thiak | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Baseline configuration. Stable but needs more timesteps; occasional scores observed. | 0.00 | Failed |
-| Kanisa Thiak | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Lower learning rate: slower, more stable learning expected; may require longer training to improve. | 0.50 | Poor |
-| Kanisa Thiak | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate and larger final eps: faster updates but risk of instability; more exploration initially. | 0.60 | Poor |
-| Kanisa Thiak | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Higher gamma (0.997): favors long-term reward/credit assignment; may improve long-horizon play with enough training. | 0.70 | Poor |
+| Kanisa Thiak | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Baseline configuration. Stable but needs more timesteps; occasional scores observed. | 0.00 | Failed/Poor |
+| Kanisa Thiak | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Lower learning rate: slower, more stable learning expected; may require longer training to improve. | 0.50 | Good|
+| Kanisa Thiak | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate and larger final eps: faster updates but risk of instability; more exploration initially. | 0.60 |  Moderate |
+| Kanisa Thiak | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Higher gamma (0.997): favors long-term reward/credit assignment; may improve long-horizon play with enough training. | 0.70 | Best |
 | Kanisa Thiak | Set 5 - lr=0.0001, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.10 | Larger batch size: more stable gradient estimates, often improves training stability. | Not evaluated | Not evaluated |
 | Kanisa Thiak | Set 6 - lr=5e-05, gamma=0.997, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05 | Low lr + high gamma + big batch: very stable but slow to improve; good for long runs. | Not evaluated | Not evaluated |
 | Kanisa Thiak | Set 7 - lr=0.00025, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Aggressive lr + high gamma: fast but potentially unstable; may get high variance in returns. | Not evaluated | Not evaluated |
