@@ -292,6 +292,11 @@ Each team member conducted 10 different hyperparameter experiments. The followin
 |                  | **Set 3** – lr=2.5e-4, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.1, eps_decay=30000 | Faster but unstable learning. Occasional reward spikes but inconsistent. | **0.4** | Moderate/Poor |
 |                  | **Set 4** – lr=1e-4, gamma=0.95, batch=128, eps_start=1.0, eps_end=0.05, eps_decay=100000 | Lower gamma reduced long-term planning, but larger batch helped stability. Best-performing MLP set. | **0.0** | Good |
 |                  | **Set 5** – lr=7.5e-5, gamma=0.99, batch=256, eps_start=1.0, eps_end=0.03, eps_decay=150000 | Very stable but too slow to adapt. Minimal learning progress. | **0.0** | Poor |
+                   | **Set 6** | lr=1e-4, gamma=0.99, batch=512, eps_start=1.0, eps_end=0.05, eps_decay=100000 | Very large batch to stabilize noisy MLP gradients; moderate LR to allow steady updates; long epsilon decay to encourage exploration. Good stability expected. | **0.4** | Moderate/Poor |
+                   | **Set 7** | lr=2e-4, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_decay=50000 | Higher LR with aggressive exploitation (low eps_end). May learn faster but risk instability; occasional reward spikes. | **0.6** | Moderate |
+                   | **Set 8** | lr=5e-5, gamma=0.995, batch=128, eps_start=1.0, eps_end=0.1, eps_decay=200000 | Very conservative LR and high gamma for longer-horizon planning; slow epsilon decay keeps exploration for longer—should help MLP discover rare but valuable strategies. | **0.8** | Moderate/Good |
+                   | **Set 9** | lr=3e-4, gamma=0.97, batch=32, eps_start=1.0, eps_end=0.05, eps_decay=30000 | Aggressive LR with smaller batch and lower gamma: faster but unstable learning and myopic behavior expected. | **0.5** | Poor |
+                   | **Set 10** | lr=1e-4, gamma=0.999, batch=128, eps_start=1.0, eps_end=0.02, eps_decay=250000 | Very high gamma (long planning horizon) plus large batch and slow decay—this combination may help MLP accumulate slightly better long-term strategies despite poor feature extraction. | **1.3** | Good/Best (for MLP) |
 
 ## Jolly Umulisa — Final Hyperparameter Experiment Table
 
