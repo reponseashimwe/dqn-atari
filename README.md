@@ -139,7 +139,7 @@ The script will:
 -   **Policy**: GreedyQPolicy (deterministic, best action selection)
 -   **Video Recording**: All episodes recorded, best one saved
 
-## 🔬 Policy Comparison: CNN vs MLP
+##  Policy Comparison: CNN vs MLP
 
 ### Overview
 
@@ -219,7 +219,17 @@ Each team member conducted 10 different hyperparameter experiments. The followin
 
 ## Jolly Umulisa – Summary of Results
 
-For my contribution, I ran five Deep Q-Learning experiments using different combinations of learning rate, discount factor, batch size, and exploration decay. Each experiment was trained for 100,000 timesteps in the Breakout Atari environment. The results showed that higher learning rates and lower gamma values led to unstable or short-sighted learning, while slower exploration decay improved consistency. The best overall performance came from the configuration with a larger batch size (Set 5), achieving an average reward of 0.8. This model was selected as my final agent and used for evaluation in play.py.
+For my contribution, I ranned five Deep Q-Learning experiments using different combinations of learning rate, discount factor, batch size, and exploration decay. Each experiment was trained for 100,000 timesteps in the Breakout Atari environment. The results showed that higher learning rates and lower gamma values led to unstable or short-sighted learning, while slower exploration decay improved consistency. The best overall performance came from the configuration with a larger batch size (Set 5), achieving an average reward of 0.8. This model was selected as my final agent and used for evaluation in play.py.
+
+## Jolly Umulisa – Gameplay Video
+
+The following video demonstrates my best-performing DQN agent (Experiment 5) playing the BreakoutNoFrameskip-v4 environment.  
+The video was recorded using the `--record` option in `play.py`.
+
+▶ **Video file:** `logs/videos/play-episode-0.mp4`
+
+This recording shows the agent interacting with the environment using the deterministic policy learned during training. Additional episodes (play-episode-1.mp4 to play-episode-19.mp4) are also available in the same folder.
+
 
 
 ##  Results and Discussion
