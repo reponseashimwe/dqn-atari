@@ -333,7 +333,7 @@ python play.py
 
 1. **Reponse** - 5 hyperparameter experiments, play.py to visualize episodes in a video
 2. **Kanisa Thiak** - 10 hyperparameter experiments (Sets 1-10) focused on epsilon schedules, gamma, and batch size trade-offs
-3. _[Member 3 - To be filled]_
+3. **Eddy Gasana** - 5 hyperparameter experiments, all with MlpPolicy, and Comparison of performance between MlpPolicy and CnnPolicy
 4. _[Member 4 - To be filled]_
 5. _[Member 5 - To be filled]_
 
