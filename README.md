@@ -226,8 +226,6 @@ For my contribution, I ranned five Deep Q-Learning experiments using different c
 The following video demonstrates my best-performing DQN agent (Experiment 5) playing the BreakoutNoFrameskip-v4 environment.  
 The video was recorded using the `--record` option in `play.py`.
 
- **Video file:** `logs/videos/play-episode-0.mp4`
-
 This recording shows the agent interacting with the environment using the deterministic policy learned during training. Additional episodes (play-episode-1.mp4 to play-episode-19.mp4) are also available in the same folder.
 
 
