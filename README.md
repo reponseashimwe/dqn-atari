@@ -72,7 +72,7 @@ Breakout is a classic Atari game where the agent controls a paddle to bounce a b
     - `autorom[accept-rom-license]` - Atari ROMs
     - `numpy` - Numerical operations
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 dqn-atari/
@@ -90,7 +90,7 @@ dqn-atari/
 └── notebooks/           # Jupyter notebooks for experimentation
 ```
 
-## 🚀 Usage
+##  Usage
 
 ### Training the Agent
 
@@ -211,10 +211,10 @@ Each team member conducted 10 different hyperparameter experiments. The followin
 | **Member Name**   | **Hyperparameter Set** | **Noted Behavior** | **Avg Reward** | **Performance** |
 |------------------|------------------------|---------------------|----------------|------------------|
 | Jolly Umulisa | Set 1 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Stable and consistent early learning. The agent explored well and achieved moderate performance with small improvements across episodes. | **0.5** | Moderate |
-| Jolly Umulisa | Set 2 – lr=5e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate caused unstable updates, resulting in fluctuating rewards and weaker convergence. | **0.2** | Poor |
-| Jolly Umulisa | Set 3 – lr=1e-4, γ=0.90, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Low gamma made the agent focus on short-term rewards. Learning remained inconsistent and performance stayed low. | **0.4** | Weak |
-| Jolly Umulisa | Set 4 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50 | Slower epsilon decay improved exploration. The agent discovered better strategies and achieved higher rewards. | **0.7** | Good |
-| Jolly Umulisa | Set 5 – lr=1e-4, γ=0.99, batch=128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Larger batch size stabilized training and produced the highest reward among all experiments. | **0.8** | **Best** |
+|               | Set 2 – lr=5e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate caused unstable updates, resulting in fluctuating rewards and weaker convergence. | **0.2** | Poor |
+|               | Set 3 – lr=1e-4, γ=0.90, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Low gamma made the agent focus on short-term rewards. Learning remained inconsistent and performance stayed low. | **0.4** | Weak |
+|               | Set 4 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50 | Slower epsilon decay improved exploration. The agent discovered better strategies and achieved higher rewards. | **0.7** | Good |
+|               | Set 5 – lr=1e-4, γ=0.99, batch=128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Larger batch size stabilized training and produced the highest reward among all experiments. | **0.8** | **Best** |
 
 
 ## Jolly Umulisa – Summary of Results
@@ -334,13 +334,13 @@ python play.py
 -   **Reward**: +1 for each brick broken, +2 for completing a level
 -   **Episode Termination**: When all lives are lost
 
-## 🔗 References
+##  References
 
 -   [Stable Baselines3 Documentation](https://stable-baselines3.readthedocs.io/)
 -   [Gymnasium Atari Environments](https://gymnasium.farama.org/environments/atari/)
 -   [DQN Paper (Mnih et al., 2015)](https://arxiv.org/abs/1312.5602)
 
-## 📄 License
+##  License
 
 This project is part of an academic assignment.
 
