@@ -72,7 +72,7 @@ Breakout is a classic Atari game where the agent controls a paddle to bounce a b
     - `autorom[accept-rom-license]` - Atari ROMs
     - `numpy` - Numerical operations
 
-##  Project Structure
+## Project Structure
 
 ```
 dqn-atari/
@@ -90,7 +90,7 @@ dqn-atari/
 └── notebooks/           # Jupyter notebooks for experimentation
 ```
 
-##  Usage
+## Usage
 
 ### Training the Agent
 
@@ -139,7 +139,7 @@ The script will:
 -   **Policy**: GreedyQPolicy (deterministic, best action selection)
 -   **Video Recording**: All episodes recorded, best one saved
 
-##  Policy Comparison: CNN vs MLP
+## Policy Comparison: CNN vs MLP
 
 ### Overview
 
@@ -172,7 +172,7 @@ model = DQN("MlpPolicy", env, ...)
 
 _Note: MLPPolicy experiments are pending and will be documented here upon completion._
 
-##  Hyperparameter Tuning Experiments
+## Hyperparameter Tuning Experiments
 
 Each team member conducted 10 different hyperparameter experiments. The following table documents all configurations tested and their observed behaviors.
 
@@ -187,35 +187,38 @@ Each team member conducted 10 different hyperparameter experiments. The followin
 
 ### Experiment Results Table
 
-| Member Name      | Hyperparameter Set                                                                                               | Noted Behavior                                                                                                                  | Avg Reward | Performance   |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------- |
-| **Reponse**      | **Set 1 (Baseline)** - lr=1e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1     | Baseline configuration. Stable learning curve with consistent improvement. Good balance between exploration and exploitation.   | 5.40       | Good          |
-|                  | **Set 2 (High LR)** - lr=5e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1      | High learning rate caused unstable training. Agent failed to learn effectively, likely due to overshooting optimal Q-values.    | 0.0        | Failed        |
-|                  | **Set 3 (Low Gamma)** - lr=1e-4, gamma=0.90, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1    | Low gamma (0.90) reduced long-term planning. Agent focused too much on immediate rewards, limiting performance.                 | 1.40       | Poor          |
-|                  | **Set 4 (Extended Eps)** - lr=1e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.5 | Extended exploration period. Slower convergence but maintained exploration longer, resulting in moderate performance.           | 3.0        | Moderate      |
-|                  | **Set 5 (Large Batch)** - lr=1e-4, gamma=0.99, batch=128, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1 | **WINNING** - Large batch size improved stability. More stable gradient updates led to better learning and highest performance. | 7.0        | Best          |
-| **Kanisa Thiak** | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                          | Baseline configuration. Stable but needs more timesteps; occasional scores observed.                                            | 0.00       | Failed/Poor   |
-|                  | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10                           | Lower learning rate: slower, more stable learning expected; may require longer training.                                        | 0.50       | Good          |
-|                  | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10                         | Faster updates but risk of instability.                                                                                         | 0.60       | Moderate      |
-|                  | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                         | Higher gamma favors long-term reward; best observed.                                                                            | 0.70       | Best          |
-|                  | Set 5 - lr=0.0001, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.10                          | Larger batch size → more stable gradients. Expected small improvement.                                                          | 0.55       | Good          |
-|                  | Set 6 - lr=5e-05, gamma=0.997, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                          | Very stable but slow. Likely moderate long-term reward.                                                                         | 0.65       | Very Good     |
-|                  | Set 7 - lr=0.00025, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10                        | Aggressive LR + high gamma → high variance.                                                                                     | 0.45       | Moderate/Poor |
-|                  | Set 8 - lr=7.5e-05, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                         | Balanced setup; stable learning expected.                                                                                       | 0.60       | Good          |
-|                  | Set 9 - lr=0.00015, gamma=0.995, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.08                        | Slightly reduced gamma; decent convergence.                                                                                     | 0.58       | Good          |
-|                  | Set 10 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.005, eps_fraction=0.05                        | Very small final eps → strong exploitation but risk of suboptimal policy.                                                       | 0.40       | Moderate/Poor |
-
+| Member Name      | Hyperparameter Set                                                                                                                | Noted Behavior                                                                                                                | Avg Reward | Performance   |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------- |
+| **Reponse**      | **Set 1 (Baseline)** - lr=1e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1                      | Baseline configuration. Stable learning curve with consistent improvement. Good balance between exploration and exploitation. | 5.40       | Good          |
+|                  | **Set 2 (High LR)** - lr=5e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1                       | High learning rate caused unstable training. Agent failed to learn effectively, likely due to overshooting optimal Q-values.  | 0.0        | Failed        |
+|                  | **Set 3 (Low Gamma)** - lr=1e-4, gamma=0.90, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1                     | Low gamma (0.90) reduced long-term planning. Agent focused too much on immediate rewards, limiting performance.               | 1.40       | Poor          |
+|                  | **Set 4 (Extended Eps)** - lr=1e-4, gamma=0.99, batch=32, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.5                  | Extended exploration period. Slower convergence but maintained exploration longer, resulting in moderate performance.         | 3.0        | Moderate      |
+|                  | **Set 5 (Large Batch)** - lr=1e-4, gamma=0.99, batch=128, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1                  | Large batch size (128) improved stability. More stable gradient updates led to better learning.                               | 7.0        | Very Good     |
+|                  | **Set 6 (Even Larger Batch)** - lr=1e-4, gamma=0.99, batch=256, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1            | Even larger batch size (256) further improved gradient stability and learning consistency.                                    | 7.60       | Excellent     |
+|                  | **Set 7 (Large Batch, Slower LR)** - lr=5e-5, gamma=0.99, batch=256, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1       | Large batch with slower learning rate. Very stable but slower convergence, moderate final performance.                        | 2.60       | Moderate      |
+|                  | **Set 8 (Large Batch, Long Eps)** - lr=1e-4, gamma=0.99, batch=256, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.5        | Large batch with extended exploration. Balanced approach but slightly lower than Set 6.                                       | 6.0        | Good          |
+|                  | **Set 9 (Large Batch, Higher Final Eps)** - lr=1e-4, gamma=0.99, batch=256, epsilon_start=1.0, epsilon_end=0.1, epsilon_decay=0.1 | Large batch with higher final epsilon (more exploration). Good performance with continued exploration.                        | 6.80       | Very Good     |
+|                  | **Set 10 (Large Batch, Faster LR)** - lr=2e-4, gamma=0.99, batch=256, epsilon_start=1.0, epsilon_end=0.05, epsilon_decay=0.1      | **WINNING** - Large batch (256) with faster LR (2e-4). Optimal balance of stability and learning speed. Highest performance!  | 8.0        | **Best**      |
+| **Kanisa Thiak** | Set 1 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                                           | Baseline configuration. Stable but needs more timesteps; occasional scores observed.                                          | 0.00       | Failed/Poor   |
+|                  | Set 2 - lr=5e-05, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.10                                            | Lower learning rate: slower, more stable learning expected; may require longer training.                                      | 0.50       | Good          |
+|                  | Set 3 - lr=0.00025, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10                                          | Faster updates but risk of instability.                                                                                       | 0.60       | Moderate      |
+|                  | Set 4 - lr=0.0001, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                                          | Higher gamma favors long-term reward; best observed.                                                                          | 0.70       | Best          |
+|                  | Set 5 - lr=0.0001, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.10                                           | Larger batch size → more stable gradients. Expected small improvement.                                                        | 0.55       | Good          |
+|                  | Set 6 - lr=5e-05, gamma=0.997, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                                           | Very stable but slow. Likely moderate long-term reward.                                                                       | 0.65       | Very Good     |
+|                  | Set 7 - lr=0.00025, gamma=0.997, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10                                         | Aggressive LR + high gamma → high variance.                                                                                   | 0.45       | Moderate/Poor |
+|                  | Set 8 - lr=7.5e-05, gamma=0.99, batch=64, eps_start=1.0, eps_end=0.01, eps_fraction=0.05                                          | Balanced setup; stable learning expected.                                                                                     | 0.60       | Good          |
+|                  | Set 9 - lr=0.00015, gamma=0.995, batch=32, eps_start=1.0, eps_end=0.01, eps_fraction=0.08                                         | Slightly reduced gamma; decent convergence.                                                                                   | 0.58       | Good          |
+|                  | Set 10 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.005, eps_fraction=0.05                                         | Very small final eps → strong exploitation but risk of suboptimal policy.                                                     | 0.40       | Moderate/Poor |
 
 ## Jolly Umulisa — Final Hyperparameter Experiment Table
 
-| **Member Name**   | **Hyperparameter Set** | **Noted Behavior** | **Avg Reward** | **Performance** |
-|------------------|------------------------|---------------------|----------------|------------------|
-| Jolly Umulisa | Set 1 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Stable and consistent early learning. The agent explored well and achieved moderate performance with small improvements across episodes. | **0.5** | Moderate |
-|               | Set 2 – lr=5e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Higher learning rate caused unstable updates, resulting in fluctuating rewards and weaker convergence. | **0.2** | Poor |
-|               | Set 3 – lr=1e-4, γ=0.90, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Low gamma made the agent focus on short-term rewards. Learning remained inconsistent and performance stayed low. | **0.4** | Weak |
-|               | Set 4 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50 | Slower epsilon decay improved exploration. The agent discovered better strategies and achieved higher rewards. | **0.7** | Good |
-|               | Set 5 – lr=1e-4, γ=0.99, batch=128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Larger batch size stabilized training and produced the highest reward among all experiments. | **0.8** | **Best** |
-
+| **Member Name** | **Hyperparameter Set**                                                             | **Noted Behavior**                                                                                                                       | **Avg Reward** | **Performance** |
+| --------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | -------------- | --------------- |
+| Jolly Umulisa   | Set 1 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Stable and consistent early learning. The agent explored well and achieved moderate performance with small improvements across episodes. | **0.5**        | Moderate        |
+|                 | Set 2 – lr=5e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Higher learning rate caused unstable updates, resulting in fluctuating rewards and weaker convergence.                                   | **0.2**        | Poor            |
+|                 | Set 3 – lr=1e-4, γ=0.90, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Low gamma made the agent focus on short-term rewards. Learning remained inconsistent and performance stayed low.                         | **0.4**        | Weak            |
+|                 | Set 4 – lr=1e-4, γ=0.99, batch=32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50  | Slower epsilon decay improved exploration. The agent discovered better strategies and achieved higher rewards.                           | **0.7**        | Good            |
+|                 | Set 5 – lr=1e-4, γ=0.99, batch=128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Larger batch size stabilized training and produced the highest reward among all experiments.                                             | **0.8**        | **Best**        |
 
 ## Jolly Umulisa – Summary of Results
 
@@ -228,9 +231,7 @@ The video was recorded using the `--record` option in `play.py`.
 
 This recording shows the agent interacting with the environment using the deterministic policy learned during training. Additional episodes (play-episode-1.mp4 to play-episode-19.mp4) are also available in the same folder.
 
-
-
-##  Results and Discussion
+## Results and Discussion
 
 ### Key Findings
 
@@ -257,15 +258,17 @@ This recording shows the agent interacting with the environment using the determ
 
 #### 3. Batch Size Effects
 
-**Observation**: Batch size had a substantial impact on training stability and final performance.
+**Observation**: Batch size had the most substantial impact on training stability and final performance.
 
 -   **Small Batch (32)**: Standard configuration, achieved moderate performance (5.40 average reward)
--   **Large Batch (128)**: **Best performing configuration** (7.0 average reward)
+-   **Medium Batch (128)**: Improved performance significantly (7.0 average reward)
+-   **Large Batch (256)**: **Best performing configuration** (7.60-8.0 average reward)
     -   More stable gradient estimates
     -   Reduced variance in updates
     -   Better generalization
+    -   Consistent learning across episodes
 
-**Conclusion**: Larger batch sizes (128) provide more stable learning and better final performance, though they require more memory.
+**Conclusion**: Batch size of 256 provides optimal stability and performance. The improvement from 32→128→256 demonstrates that larger batches are crucial for Atari environments, despite higher memory requirements.
 
 #### 4. Exploration Strategy
 
@@ -278,24 +281,26 @@ This recording shows the agent interacting with the environment using the determ
 
 ### Best Configuration
 
-**Winning Hyperparameters** (Set 5 - Large Batch):
+**Winning Hyperparameters** (Set 10 - Large Batch with Faster LR):
 
 ```
-Learning Rate: 1e-4
+Learning Rate: 2e-4
 Gamma: 0.99
-Batch Size: 128
+Batch Size: 256
 Epsilon Start: 1.0
 Epsilon End: 0.05
 Epsilon Decay: 0.1
-Average Reward: 7.0
+Average Reward: 8.0
 ```
 
-This configuration achieved the highest average reward (7.0) by combining:
+This configuration achieved the highest average reward (8.0) by combining:
 
--   Stable learning rate (1e-4)
--   Long-term planning (gamma=0.99)
--   Stable gradient updates (batch_size=128)
--   Appropriate exploration schedule (epsilon_decay=0.1)
+-   Faster learning rate (2e-4) - enabling quicker convergence while maintaining stability
+-   Long-term planning (gamma=0.99) - essential for strategic gameplay
+-   Very large batch size (256) - providing maximum gradient stability
+-   Fast exploration decay (0.1) - allowing early exploitation of learned strategies
+
+**Key Insight**: The combination of large batch size (256) with a slightly faster learning rate (2e-4) proved optimal. The large batch size provides enough stability to support the faster learning rate without causing instability.
 
 ### Training Insights
 
@@ -303,9 +308,11 @@ This configuration achieved the highest average reward (7.0) by combining:
 
 2. **Long-term Planning Matters**: High gamma (0.99) was crucial for Breakout, where successful gameplay requires planning several steps ahead.
 
-3. **Batch Size is Critical**: Increasing batch size from 32 to 128 improved performance by 30%, demonstrating the importance of stable gradient estimates.
+3. **Batch Size is Critical**: Increasing batch size from 32 to 256 improved performance by 48% (from 5.4 to 8.0), demonstrating that very large batches are essential for stable Atari training. The progression 32→128→256 showed consistent improvements.
 
 4. **Exploration Balance**: Too much exploration (slow epsilon decay) can hurt performance once the agent has learned effective strategies.
+
+5. **Learning Rate and Batch Size Synergy**: The winning configuration demonstrates that larger batch sizes enable faster learning rates. Set 10 (lr=2e-4, batch=256) outperformed Set 6 (lr=1e-4, batch=256) because the large batch provided enough stability to support the faster learning rate. However, Set 7 (lr=5e-5, batch=256) was too slow, showing that both extremes should be avoided.
 
 ## Video Demonstration
 
@@ -329,7 +336,7 @@ python play.py
 
 ## Team Members
 
-1. **Reponse** - 5 hyperparameter experiments, play.py to visualize episodes in a video
+1. **Reponse** - 10 hyperparameter experiments (Sets 1-10) exploring batch sizes and learning rate combinations, play.py to visualize full episodes in video until all lives are lost
 2. **Kanisa Thiak** - 10 hyperparameter experiments (Sets 1-10) focused on epsilon schedules, gamma, and batch size trade-offs
 3. **Eddy Gasana** - 5 hyperparameter experiments, all with MlpPolicy, and Comparison of performance between MlpPolicy and CnnPolicy
 4. _[Member 4 - To be filled]_
@@ -342,17 +349,17 @@ python play.py
 -   **Reward**: +1 for each brick broken, +2 for completing a level
 -   **Episode Termination**: When all lives are lost
 
-##  References
+## References
 
 -   [Stable Baselines3 Documentation](https://stable-baselines3.readthedocs.io/)
 -   [Gymnasium Atari Environments](https://gymnasium.farama.org/environments/atari/)
 -   [DQN Paper (Mnih et al., 2015)](https://arxiv.org/abs/1312.5602)
 
-##  License
+## License
 
 This project is part of an academic assignment.
 
 ---
 
 **Last Updated**: 2025
-**Best Model Performance**: 7.0 average reward over 5 evaluation episodes
+**Best Model Performance**: 8.0 average reward over 10 evaluation episodes (Set 10: lr=2e-4, batch=256)
