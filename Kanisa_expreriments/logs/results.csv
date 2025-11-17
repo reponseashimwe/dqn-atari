@@ -11,6 +11,7 @@ experiment_id,policy,learning_rate,gamma,batch_size,exploration_initial_eps,expl
 2,CnnPolicy,0.00025,0.99,32,1.0,0.05,0.1,50000,0.6,0.66332495807108,C:\Users\HP\Desktop\formative\logs\dqn_exp_2.zip
 3,CnnPolicy,0.0001,0.997,32,1.0,0.01,0.05,50000,0.7,0.7810249675906655,C:\Users\HP\Desktop\formative\logs\dqn_exp_3.zip
 1,CnnPolicy,0.0001,0.99,32,1.0,0.01,0.05,50000,0.0,0.0,C:\Users\HP\Desktop\formative\logs\dqn_exp_1.zip
+<<<<<<< HEAD:logs/results.csv
 1,CnnPolicy,0.0001,0.99,32,1.0,0.05,0.1,100000,0.5,0.5,C:\Users\Jolie\dqn-atari\logs\dqn_exp_1.zip
 2,CnnPolicy,0.0005,0.99,32,1.0,0.05,0.1,100000,0.2,0.4000000000000001,C:\Users\Jolie\dqn-atari\logs\dqn_exp_2.zip
 3,CnnPolicy,0.0001,0.9,32,1.0,0.05,0.1,100000,0.4,0.66332495807108,C:\Users\Jolie\dqn-atari\logs\dqn_exp_3.zip
@@ -19,3 +20,7 @@ experiment_id,policy,learning_rate,gamma,batch_size,exploration_initial_eps,expl
 5,CnnPolicy,0.0001,0.99,64,1.0,0.01,0.1,,0.9,1.2206555615733703,.\logs\dqn_exp_5.zip
 5,CnnPolicy,0.0001,0.99,64,1.0,0.01,0.1,,0.8,0.4,.\logs\dqn_exp_5.zip
 5,CnnPolicy,0.0001,0.99,64,1.0,0.01,0.1,,1.1,0.5385164807134505,.\logs\dqn_exp_5.zip
+=======
+1,CnnPolicy,0.0001,0.99,32,1.0,0.01,0.05,,0.2,0.6000000000000001,logs\best_exp_1\best_model.zip
+1,CnnPolicy,0.0001,0.99,32,1.0,0.01,0.05,,0.0,0.0,logs\best_exp_1\best_model.zip
+>>>>>>> abaa5d6 (Kanisa):Kanisa_expreriments/logs/results.csv
