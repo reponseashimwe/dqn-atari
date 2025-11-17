@@ -124,6 +124,6 @@ if __name__ == "__main__":
     gym.register_envs(ale_py)
     
     # This is the path to your winning model
-    MODEL_PATH = "dqn_model_set_10.zip"
+    MODEL_PATH = "dqn_model.zip"
     
     play_agent(MODEL_PATH)

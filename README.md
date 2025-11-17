@@ -84,9 +84,9 @@ dqn-atari/
 ├── video.mp4            # Best episode video recording
 ├── videos/              # All recorded episodes
 ├── experiments/         # Experiment results and models
-│   └── reponse/
+│   └── member/
 │       ├── experiment_results.json
-│       └── Set_*_*/     # Individual experiment folders
+│       └── *_*/     # Individual experiment folders
 └── notebooks/           # Jupyter notebooks for experimentation
 ```
 
@@ -336,11 +336,10 @@ python play.py
 
 ## Team Members
 
-1. **Reponse** - 10 hyperparameter experiments (Sets 1-10) exploring batch sizes and learning rate combinations, play.py to visualize full episodes in video until all lives are lost
-2. **Kanisa Thiak** - 10 hyperparameter experiments (Sets 1-10) focused on epsilon schedules, gamma, and batch size trade-offs
+1. **Reponse** - 10 hyperparameter experiments (Sets 1-10) exploring batch sizes and learning rate combinations, play.py to visualize full episodes in video
+2. **Kanisa Thiak** - 10 hyperparameter experiments (Sets 1-10) focused on epsilon schedules, gamma, and batch size trade-off, train.py
 3. **Eddy Gasana** - 5 hyperparameter experiments, all with MlpPolicy, and Comparison of performance between MlpPolicy and CnnPolicy
-4. _[Member 4 - To be filled]_
-5. _[Member 5 - To be filled]_
+4. **Jolly Umulisa** - 5 hyperparameter experiments and documentation
 
 ### Environment Details
 
