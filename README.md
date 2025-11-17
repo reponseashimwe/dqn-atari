@@ -206,14 +206,13 @@ Each team member conducted 10 different hyperparameter experiments. The followin
 |                  | Set 10 - lr=0.0001, gamma=0.99, batch=32, eps_start=1.0, eps_end=0.005, eps_fraction=0.05                        | Very small final eps → strong exploitation but risk of suboptimal policy.                                                       | 0.40       | Moderate/Poor |
 
 
-| MEMBER NAME       | Hyperparameter Set                                                                           | Noted Behavior                                                                                                                           | Avg Reward | Performance |
-| ----------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------- |
-
-| **Jolly Umulisa** | **Set 1** – lr = 1e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Stable and consistent early learning. The agent explored well and achieved moderate performance with small improvements across episodes. | **0.5**    | Moderate    |
-| **Jolly Umulisa** | **Set 2** – lr = 5e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Higher learning rate caused unstable updates. The agent performed worse and rewards fluctuated heavily, showing poor convergence.        | **0.2**    | Poor        |
-| **Jolly Umulisa** | **Set 3** – lr = 1e-4, γ = 0.90, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10  | Low gamma made the agent focus on short-term rewards. Learning was inconsistent and overall performance remained low.                    | **0.4**    | Weak        |
-| **Jolly Umulisa** | **Set 4** – lr = 1e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50  | Slower decay improved exploration. The agent discovered more rewarding actions and achieved significantly better performance.            | **0.7**    | Good        |
-| **Jolly Umulisa** | **Set 5** – lr = 1e-4, γ = 0.99, batch = 128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10 | Larger batch size stabilized updates. Provided the best learning curve and the highest average reward among all 5 experiments.           | **0.8**    | **Best**    |
+JOLLY UMULISA — FINAL HYPERPARAMETER EXPERIMENT TABLE
+MEMBER NAME	Hyperparameter Set	Noted Behavior	Avg Reward	Performance
+Jolly Umulisa	Set 1 – lr = 1e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10	Stable and consistent early learning. The agent explored well and achieved moderate performance with small improvements across episodes.	0.5	Moderate
+Jolly Umulisa	Set 2 – lr = 5e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10	Higher learning rate caused unstable updates. The agent performed worse and rewards fluctuated heavily, showing poor convergence.	0.2	Poor
+Jolly Umulisa	Set 3 – lr = 1e-4, γ = 0.90, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.10	Low gamma made the agent focus on short-term rewards. Learning was inconsistent and overall performance remained low.	0.4	Weak
+Jolly Umulisa	Set 4 – lr = 1e-4, γ = 0.99, batch = 32, eps_start=1.0, eps_end=0.05, eps_fraction=0.50	Slower decay improved exploration. The agent discovered more rewarding actions and achieved significantly better performance.	0.7	Good
+Jolly Umulisa	Set 5 – lr = 1e-4, γ = 0.99, batch = 128, eps_start=1.0, eps_end=0.05, eps_fraction=0.10	Larger batch size stabilized updates. Provided the best learning curve and the highest average reward among all 5 experiments.	0.8	Best
 
 ## Jolly Umulisa – Summary of Results
 
